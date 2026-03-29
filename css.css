@@ -1,0 +1,337 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== BODY (KEPT YOUR VERSION) ===== */
+body {
+    background: #f5f5f5;
+    color: #111;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.hero-text {
+    max-width: 500px;
+    margin-right: 40px;
+    margin-left: 300px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.hero-text button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-text button:hover {
+    background: #ff0000;
+}
+
+.hero img {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000; /* FORCE BLACK TEXT */
+}
+
+/* ===== FIX: REMOVE UNDERLINE + FORCE BLACK FOR FEATURED PRODUCTS ===== */
+.card a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    margin-top: 40px;
+}
+
+/* ===== LOGIN & SIGNUP PAGES ===== */
+.login-container, .signup-container {
+    height: auto;
+    display: block;
+    margin: 50px auto;
+    width: 360px;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2, .signup-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #111;
+    outline: none;
+}
+
+.login-btn, .signup-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background-color: #333;
+}
+
+.login-container p, .signup-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container p a, .signup-container p a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-container p a:hover, .signup-container p a:hover {
+    color: #ff3b30;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .login-container, .signup-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: #111;
+    color: #fff;
+    padding: 60px 20px 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-about, .footer-links, .footer-social {
+    flex: 1 1 200px;
+    margin: 15px 10px;
+    min-height: 150px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+/* ===== MAIN FLEX ===== */
+main {
+    flex: 1;
+}
+
+/* ===== FEATURED PRODUCT VIDEO ADJUSTMENT ===== */
+.bg-video {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0px auto;
+    transform: translateX(20px);
+}

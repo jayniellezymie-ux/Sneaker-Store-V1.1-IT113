@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kids Sneakers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-category="Kids">
+
+<header>
+    <div class="navbar">
+        <div class="logo">Jovelistic</div>
+
+        <nav class="menu">
+            <a href="Mens.html">Mens</a>
+            <a href="Sales.html">Sale</a>
+            <a href="Womens.html">Womens</a>
+            <a href="Kids.html">Kids</a>
+        </nav>
+
+        <div class="right-section">
+            <div class="search-bar">
+                <input type="text" id="searchBar" placeholder="Search sneakers">
+            </div>
+            <a href="Fave.html"><button>❤</button></a>
+            <a href="Checkout.html"><button>🛍️</button></a>
+        </div>
+    </div>
+</header>
+
+<section class="content">
+    <h1>Kids Sneakers</h1>
+    <p>Fun and colorful sneakers for kids.</p>
+    <div class="product-grid" id="product-grid"></div>
+</section>
+
+<script src="script.js"></script>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+</body>
+</html>

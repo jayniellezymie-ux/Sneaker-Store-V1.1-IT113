@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmation</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* ===== CONTAINER ===== */
+.confirmation-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== HEADER ===== */
+h1 {
+    text-align: center;
+    color: #e10600;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.section p {
+    margin-bottom: 5px;
+}
+
+/* ===== ORDER ITEMS ===== */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== BUTTON ===== */
+.home-btn {
+    width: 100%;
+    padding: 15px;
+    background: #e10600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.home-btn:hover {
+    background: #b00400;
+}
+</style>
+
+</head>
+<body>
+
+<div class="confirmation-container">
+
+    <h1>🎉 Order Confirmed!</h1>
+    <p class="subtitle">Thank you for your purchase.</p>
+
+    <!-- SHIPPING -->
+    <div class="section">
+        <h2>Shipping Details</h2>
+        <p><strong>Name:</strong> <span id="c-name"></span></p>
+        <p><strong>Address:</strong> <span id="c-address"></span></p>
+        <p><strong>City:</strong> <span id="c-city"></span></p>
+        <p><strong>Phone:</strong> <span id="c-phone"></span></p>
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="section">
+        <h2>Payment Method</h2>
+        <p id="c-payment"></p>
+    </div>
+
+    <!-- ORDER -->
+    <div class="section">
+        <h2>Order Summary</h2>
+        <div id="order-items"></div>
+        <h3>Total: ₱<span id="c-total"></span></h3>
+    </div>
+
+    <a href="Home.html">
+        <button class="home-btn">Back to Home</button>
+    </a>
+
+</div>
+
+<script>
+const order = JSON.parse(localStorage.getItem("order"));
+
+if(!order){
+    document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>No order found.</h2>";
+}
+
+// SHIPPING DETAILS
+document.getElementById("c-name").textContent = order.shipping.name;
+document.getElementById("c-address").textContent = order.shipping.address;
+document.getElementById("c-city").textContent = order.shipping.city;
+document.getElementById("c-phone").textContent = order.shipping.phone;
+
+// PAYMENT
+document.getElementById("c-payment").textContent = order.payment;
+
+// ITEMS
+const itemsDiv = document.getElementById("order-items");
+
+order.cart.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "order-item";
+
+    div.innerHTML = `
+        <span>${item.name} (Size: ${item.size}) x${item.qty}</span>
+        <span>₱${item.price * item.qty}</span>
+    `;
+
+    itemsDiv.appendChild(div);
+});
+
+// TOTAL
+document.getElementById("c-total").textContent = order.total;
+</script>
+
+</body>
+</html>

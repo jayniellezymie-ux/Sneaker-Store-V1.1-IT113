@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Jovelistic</title>
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="signupName" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="signupPassword" placeholder="Create password" required>
+        </div>
+        <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if(users.some(u => u.email === email)){
+        alert('Email already registered!');
+        return;
+    }
+
+    users.push({name, email, password});
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('Signup successful! You can now login.');
+    window.location.href = 'login.html';
+});
+</script>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+</body>
+</html>

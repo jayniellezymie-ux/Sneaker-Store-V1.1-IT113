@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker Store</title>
+<link rel="stylesheet" href="css.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Jovelistic</div>
+    <ul>
+        <li><a href="Mens.html">Mens</a></li>
+        <li><a href="Womens.html">Women</a></li>
+        <li><a href="Kids.html">Kids</a></li>
+        <li><a href="Sales.html">Sale</a></li>
+
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>STEP INTO THE HEAT</h1>
+        <p>Discover the latest Shoe collections built for performance and style.</p>
+        <a href="Sales.html">
+        <button>Shop Sale</button>
+        </a>
+    </div>
+     <video autoplay muted loop playsinline class="bg-video">
+        <source src="Backgrounds/download.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid" id="featured-products"></div>
+</section>
+
+<script src="script.js"></script>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Sneaker Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">Jovelistic</div>
+</header>
+
+<section class="hero">
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="Backgrounds/Videobackground.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>AFFORDABLE AND QUALITY <span>SNEAKERS</span></h1>
+        <p>Classic kicks. Limited drops. Street style.</p>
+
+
+        <a href="login.html">
+    <button>Login</button>
+</a>
+
+
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Ison, Jaynielle Zymie U. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

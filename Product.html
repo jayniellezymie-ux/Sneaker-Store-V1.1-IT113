@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Preview</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="product-preview">
+    <div class="preview-container">
+
+        <!-- LEFT: Images -->
+        <div class="preview-images">
+
+            <!-- Thumbnails -->
+            <div class="thumbnail-list">
+                <img src="img1.jpg" class="thumb active">
+                <img src="img2.jpg" class="thumb">
+                <img src="img3.jpg" class="thumb">
+                <img src="img4.jpg" class="thumb">
+            </div>
+
+            <!-- Main Image -->
+            <div class="preview-main">
+                <img id="main-image" src="img1.jpg" alt="Product">
+            </div>
+
+        </div>
+
+        <!-- RIGHT: Details -->
+        <div class="preview-details">
+            <h1>Nike Air Max</h1>
+            <h2>₱6,500</h2>
+            <p class="description">
+                Clean, modern sneakers designed for everyday comfort and style.
+            </p>
+
+            <div class="sizes">
+                <h3>Select Size:</h3>
+                <button class="size-btn">7</button>
+                <button class="size-btn">8</button>
+                <button class="size-btn">9</button>
+                <button class="size-btn">10</button>
+                <button class="size-btn">11</button>
+            </div>
+
+            <div class="preview-buttons">
+                <button id="add-to-cart">Add to Bag</button> 
+                <button id="favorite-btn">❤ Add to Favorites</button>
+            </div>
+
+            <button id="back-btn">← Back</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+</body>
+</html>

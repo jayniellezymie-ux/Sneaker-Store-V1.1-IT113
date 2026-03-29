@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites - Jovelistic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">Jovelistic</div>
+        <nav class="menu">
+            <a href="Mens.html">Mens</a>
+            <a href="Sales.html">Sale</a>
+            <a href="Womens.html">Womens</a>
+            <a href="Kids.html">Kids</a>
+        </nav>
+        <div class="right-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search sneakers">
+            </div>
+            
+            <a href="Checkout.html"><button>🛍️</button></a>
+        </div>
+    </div>
+</header>
+
+<section class="content">
+    <h1>My Favorites</h1>
+    <p>Here are the sneakers you favorited.</p>
+
+    <div id="favorites-grid" class="product-grid"></div>
+
+    <div id="empty-message" style="text-align:center; margin-top:40px; display:none;">
+        <p style="font-size:20px;">No Items in Favorites</p>
+        <a href="Home.html" class="go-to-shop-btn">Go to Shop</a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const favoritesGrid = document.getElementById("favorites-grid");
+    const emptyMsg = document.getElementById("empty-message");
+
+    // Get favorites from localStorage
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if(favorites.length === 0){
+        emptyMsg.style.display = "block";
+    } else {
+        favorites.forEach(index => {
+            const product = products[index];
+            if(product){
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <a href="product.html?index=${index}">
+                        <img src="${product.images[0]}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <div class="category">${product.category}</div>
+                        <div class="price">₱${product.price}</div>
+                    </a>
+                `;
+                favoritesGrid.appendChild(card);
+            }
+        });
+    }
+});
+</script>
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Jovelistic</title>
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const user = users.find(u => u.email === email && u.password === password);
+    if(user){
+        alert('Login successful!');
+        window.location.href = 'Home.html'; // redirect to your landing page
+    } else {
+        alert('Invalid email or password!');
+    }
+});
+</script>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h3>Sneaker Store</h3>
+            <p>Your one-stop shop for the latest and greatest sneakers. Stay stylish, stay comfy.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Mens.html" onclick="populateProducts('Mens')">Mens</a></li>
+                <li><a href="Womens.html" onclick="populateProducts('Womens')">Womens</a></li>
+                <li><a href="Kids.html" onclick="populateProducts('Kids')">Kids</a></li>
+                <li><a href="Sales.html" onclick="populateProducts('Sale')">Sale</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sneaker Store. All rights reserved.</p>
+        <p>@This is a school project and is not affiliated with or endorsed by any brands mentioned.</p>
+        <p>All trademarks and copyrights belong to their respective owners</p>
+    </div>
+</footer>
+
+</body>
+</html>
